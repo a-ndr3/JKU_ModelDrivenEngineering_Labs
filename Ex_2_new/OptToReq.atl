@@ -1,0 +1,16 @@
+-- @path RequirementsNegociation=/Ex_2_new/models/RequirementsNegotiation.ecore
+-- @path RequirementsSpecification=/Ex_2_new/models/RequirementsSpecification.ecore
+
+module OptToReq;
+create OUT : RequirementsSpecification from IN : RequirementsNegociation;
+
+rule OptToReqRule {
+ from
+    o : RequirementsNegociation!Option (o.votes->forAll(v | v.agreement = true))
+  to
+    r : RequirementsSpecification!Requirement (
+      id <- o.id,
+      description <- o.description,
+      importance <- if o.votes->size() > 0 then o.votes->collect(v | v.importance)->sum().div(o.votes->size()) else 0 endif
+    )
+}

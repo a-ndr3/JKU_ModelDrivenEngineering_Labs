@@ -1,0 +1,26 @@
+-- @path RequirementsNegociation=/Ex_2_new/models/RequirementsNegotiation.ecore
+-- @path RequirementsSpecification=/Ex_2_new/models/RequirementsSpecification.ecore
+
+module AgreemRatioForEachIssue;
+create OUT : RequirementsSpecification from IN : RequirementsNegociation;
+
+helper context RequirementsNegociation!Issue def: getRatio(issue: RequirementsNegociation!Option): Real =
+  let totalVotes : Integer = issue.votes->collect(o | o.votes)->size() in
+    if totalVotes > 0 then
+      issue.votes->collect(o | o.votes->select(v | v.agreement = true))->size().div(totalVotes)
+    else
+      0.0
+    endif;
+
+rule GetRatioFromAgreem{
+	 from
+    i : RequirementsNegociation!WinCondition,
+	opt: RequirementsNegociation!Option
+  to
+    r : RequirementsSpecification!Requirement 
+	(
+      id <- i.id,
+      description <- i.description,
+      rate <- opt.votes->collect(o | o.votes->collect(v | v.importance)->sum())->sum()
+    )
+}

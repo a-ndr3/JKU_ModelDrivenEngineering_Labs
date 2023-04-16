@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rs="mde.ecore.rs">
+  <rs:Actor role="tester"/>
+  <rs:Actor role="developer"/>
+  <rs:Actor role="user"/>
+  <rs:Actor role="client"/>
+  <rs:Actor role="tester"/>
+  <rs:Actor role="developer"/>
+  <rs:Actor role="user"/>
+  <rs:Actor role="client"/>
+  <rs:Actor role="tester"/>
+  <rs:Actor role="developer"/>
+  <rs:Actor role="user"/>
+  <rs:Actor role="client"/>
+</xmi:XMI>

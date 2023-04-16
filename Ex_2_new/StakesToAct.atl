@@ -1,0 +1,33 @@
+-- @path RequirementsNegociation=/Ex_2_new/models/RequirementsNegotiation.ecore
+-- @path RequirementsSpecification=/Ex_2_new/models/RequirementsSpecification.ecore
+
+
+module StakesToAct;
+create OUT : RequirementsSpecification from IN : RequirementsNegociation;
+
+--helper context RequirementsNegotiation!Stakeholder def: getPositions() : Sequence(String) =
+-- if self.position.indexOf(',') = -1 then
+ --   Sequence{self.position}
+--  else
+ --   self.position.split(',')
+--  endif;
+
+rule Stakeholder2Actor {
+  from
+    s : RequirementsNegociation!Stakeholder
+	using{
+    	pos: Sequence(String) = Sequence{'tester','developer','user','client'};
+	}
+to
+    a : distinct RequirementsSpecification!Actor foreach(p in pos)(
+      if (s.position = p)
+      {
+      	role <- s.position
+      	}
+    )
+}
+--role <- s.name.concat(s.position)
+
+--role <- s.position->append(s.name).toString()
+
+--o.votes->forAll(v | v.agreement = true)  

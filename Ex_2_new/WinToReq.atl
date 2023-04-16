@@ -1,0 +1,42 @@
+-- @path RequirementsNegociation=/Ex_2_new/models/RequirementsNegotiation.ecore
+-- @path RequirementsSpecification=/Ex_2_new/models/RequirementsSpecification.ecore
+
+module WinToReq;
+create OUT : RequirementsSpecification from IN : RequirementsNegociation;
+
+rule WinCondIdEqualIdReq {
+ from
+   w : RequirementsNegociation!WinCondition (w.issues.isEmpty())
+  to
+    r : RequirementsSpecification!Requirement
+(
+		 id <- w.id,
+         description <- w.description,
+		 importance <- 10
+)
+}
+
+
+--rule WinCondIdEqualIdReq {
+-- from
+--   w : RequirementsNegociation!WinCondition
+--  to
+--    r : RequirementsSpecification!Requirement
+--(
+--		 id <- w.id,
+--         description <- w.description
+--)
+--}
+
+
+--works
+--rule WinCondwithoutIssues {
+-- from
+--   w : RequirementsNegociation!WinCondition (w.issues.isEmpty())
+--  to
+--    r : RequirementsSpecification!Requirement
+--(
+--		id <- w.id,
+--        description <- w.description
+--)
+--}
