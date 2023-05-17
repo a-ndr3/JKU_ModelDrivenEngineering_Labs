@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Robocode_model_project/src-gen" creationIcons="false"
+    editDirectory="/Robocode_model_project.edit/src-gen" editorDirectory="/Robocode_model_project.editor/src-gen"
+    modelPluginID="Robocode_model_project" modelName="Robocode_model_project" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>robocode_model_project.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Robocode_model_project" basePackage="eclipse.myrobocode.model.sirius"
+      disposableProviderFactory="true" ecorePackage="robocode_model_project.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robocode_model_project.ecore#//Color">
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/undef"/>
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/White"/>
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/Black"/>
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/Blue"/>
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/Green"/>
+      <genEnumLiterals ecoreEnumLiteral="robocode_model_project.ecore#//Color/Yellow"/>
+    </genEnums>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Robot">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/run"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Robot/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/body"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/scaner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/radar"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/gun"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robot/energy"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Body">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Body/color"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Radar">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Radar/color"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Gun">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Gun/color"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Scaner">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Scaner/color"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//AdvancedRobot">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//AdvancedRobot/customevent"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//CustomEvent">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference robocode_model_project.ecore#//CustomEvent/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//CustomEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//RateControlRobot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//RateControlRobot/velocityRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//RateControlRobot/turnRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//RateControlRobot/gunTurnRotationRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//RateControlRobot/radarRotationRate"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//HitByBulletEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//HitByBulletEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//HitRobotEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//HitRobotEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//HitWallEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//HitWallEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//ScannedRobotEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//ScannedRobotEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//DeathEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//DeathEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//WinEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//WinEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Ahead">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Ahead/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Ahead/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Back">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Back/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Back/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Fire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Fire/power"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Fire/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Scan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Scan/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnLeft">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnLeft/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnLeft/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//BulletMissedEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//BulletMissedEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//BulletHitEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//BulletHitEvent/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="robocode_model_project.ecore#//Condition"/>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnGunLeft">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunLeft/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunLeft/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRight/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRight/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnGunRight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunRight/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunRight/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRadarLeft">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarLeft/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarLeft/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRadarRight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarRight/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarRight/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Loop/action"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Event"/>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Run">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Run/loop"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Action"/>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Robots">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robots/robot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robots/run"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robots/loop"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robots/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//Robots/bigtestclass"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//Energy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//Energy/color"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//BigTestClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//BigTestClass/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robocode_model_project.ecore#//BigTestClass/actionhelper"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRadarLeftTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarLeftTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarLeftTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//ActionHelper"/>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnGunRightTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunRightTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunRightTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRadarRightTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarRightTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRadarRightTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnGunLeftTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunLeftTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnGunLeftTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//ScanTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//ScanTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//FireTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//FireTest/power"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//FireTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//AheadTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//AheadTest/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//AheadTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//BackTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//BackTest/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//BackTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnRightTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRightTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnRightTest/name"/>
+    </genClasses>
+    <genClasses ecoreClass="robocode_model_project.ecore#//TurnLeftTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnLeftTest/degrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robocode_model_project.ecore#//TurnLeftTest/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

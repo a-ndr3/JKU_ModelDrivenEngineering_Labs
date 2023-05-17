@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robocodeSirius:RobotDesign
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:robocodeSirius="http://www.example.org/robocodeSirius">
+  <robot name="bot1"
+      eventsHandled="//@events.1 //@events.2"/>
+  <robot xsi:type="robocodeSirius:AdvancedRobot"
+      name="bot2"
+      eventsHandled="//@events.0 //@events.1">
+    <infiniteLoopActions
+        functionName="move"
+        parameters="15"/>
+  </robot>
+  <robot xsi:type="robocodeSirius:RangeControlRobot"
+      name="bot3"
+      eventsHandled="//@events.0 //@events.1">
+    <infiniteLoopActions
+        functionName="setTurnRate"
+        parameters="25"/>
+  </robot>
+  <events/>
+  <events eventType="BulletHit"/>
+  <events eventType="Death">
+    <actions
+        functionName="act1"
+        parameters="1"/>
+  </events>
+</robocodeSirius:RobotDesign>

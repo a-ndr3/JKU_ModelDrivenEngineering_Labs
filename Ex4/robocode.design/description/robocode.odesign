@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="robocode" version="12.0.0.2017041100">
+  <ownedViewpoints name="RobotDesign">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="RobotDiagram" domainClass="robocodeSirius::RobotDesign" enablePopupBars="true">
+      <validationSet>
+        <ownedRules xsi:type="validation:ViewValidationRule" name="check1" level="ERROR" targets="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Event'] //@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Event']/@subContainerMappings[name='actions'] //@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@edgeMappings[name='eventHandled'] //@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot'] //@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']/@subContainerMappings[name='infiniteLoopActions'] //@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']/@subContainerMappings[name='runActions']"/>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="check2" level="ERROR" targetClass="robocodeSirius::Robot"/>
+      </validationSet>
+      <defaultLayer name="Default">
+        <edgeMappings name="eventHandled" sourceMapping="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']" targetMapping="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Event']" targetFinderExpression="[eventsHandled/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Robot" labelDirectEdit="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" domainClass="robocodeSirius::Robot" childrenPresentation="VerticalStack">
+          <subContainerMappings name="runActions" labelDirectEdit="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditFunctionName']" semanticCandidatesExpression="[runActions/]" domainClass="robocodeSirius::Action" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.functionName+'('+self.parameters+')' ">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="infiniteLoopActions" labelDirectEdit="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditFunctionName']" semanticCandidatesExpression="[infiniteLoopActions/]" domainClass="robocodeSirius::Action" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.functionName+'('+self.parameters+')' ">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Event" domainClass="robocodeSirius::Event" childrenPresentation="VerticalStack">
+          <subContainerMappings name="actions" semanticCandidatesExpression="[actions/]" domainClass="robocodeSirius::Action">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.functionName+'('+self.parameters+')' ">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="feature:eventType">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+          </style>
+        </containerMappings>
+        <toolSections name="EventSection">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Robot" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::Robot" referenceName="robot">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Robot"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Advanced Robot" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::AdvancedRobot" referenceName="robot">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="AdvRobot"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Rate Control Robot" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::RangeControlRobot" referenceName="robot">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="RateRobot"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Run Action" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']/@subContainerMappings[name='runActions']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::Action" referenceName="runActions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="functionName" valueExpression="new function"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditFunctionName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="functionName" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Loop Action" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Robot']/@subContainerMappings[name='infiniteLoopActions']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::Action" referenceName="infiniteLoopActions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="functionName" valueExpression="new function"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Event Section">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Event" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Event']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::Event" referenceName="events"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Handle Event" edgeMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@edgeMappings[name='eventHandled']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="eventsHandled" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Event Action" containerMappings="//@ownedViewpoints[name='RobotDesign']/@ownedRepresentations[name='RobotDiagram']/@defaultLayer/@containerMappings[name='Event']/@subContainerMappings[name='actions']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="robocodeSirius::Action" referenceName="actions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="functionName" valueExpression="new function"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="robocode.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

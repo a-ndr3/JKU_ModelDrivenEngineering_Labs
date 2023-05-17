@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated robocodeSirius -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="robocodeSirius.presentation.RobocodeSiriusModelWizardID"
+            name="%_UI_RobocodeSiriusModelWizard_label"
+            class="robocodeSirius.presentation.RobocodeSiriusModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RobocodeSiriusModelFile.gif">
+         <description>%_UI_RobocodeSiriusModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated robocodeSirius -->
+      <editor
+            id="robocodeSirius.presentation.RobocodeSiriusEditorID"
+            name="%_UI_RobocodeSiriusEditor_label"
+            icon="icons/full/obj16/RobocodeSiriusModelFile.gif"
+            extensions="robocodesirius"
+            class="robocodeSirius.presentation.RobocodeSiriusEditor"
+            contributorClass="robocodeSirius.presentation.RobocodeSiriusActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

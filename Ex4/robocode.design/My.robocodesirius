@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robocodeSirius:RobotDesign xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:robocodeSirius="http://www.example.org/robocodeSirius">
+  <robot xsi:type="robocodeSirius:AdvancedRobot" name="SpinBot" eventsHandled="//@events.0 //@events.1">
+    <runActions functionName="setBodyColor" parameters="Color.blue"/>
+    <runActions functionName="setGunColor" parameters="Color.blue"/>
+    <runActions functionName="setRadarColor" parameters="Color.black"/>
+    <runActions functionName="setScanColor" parameters="Color.yellow"/>
+    <infiniteLoopActions functionName="setTurnRight" parameters="10000"/>
+    <infiniteLoopActions functionName="setMaxVelocity" parameters="5"/>
+    <infiniteLoopActions functionName="ahead" parameters="10000"/>
+  </robot>
+  <events eventType="ScannedRobot">
+    <actions functionName="fire" parameters="3"/>
+  </events>
+  <events eventType="HitRobot">
+    <actions comment="If the robot is close enough" functionName="fire" parameters="3"/>
+    <actions comment="If it is my fault" functionName="turnRight" parameters="10"/>
+  </events>
+</robocodeSirius:RobotDesign>

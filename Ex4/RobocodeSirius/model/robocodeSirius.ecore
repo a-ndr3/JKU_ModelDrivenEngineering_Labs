@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robocodeSirius" nsURI="http://www.example.org/robocodeSirius"
+    nsPrefix="robocodeSirius">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Robot">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueEventHandlers NoCustomEvent ForbiddenActionsForRobot"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
+      <details key="UniqueEventHandlers" value="Tuple {&#xA;&#x9;message : String = 'Cant set more than 1 event of each type',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.eventsHandled->isUnique(eventType)&#xA;}.status"/>
+      <details key="NoCustomEvent" value="Tuple {&#xA;&#x9;message : String = 'Robot cant have custom events',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.oclIsTypeOf(Robot) implies self.eventsHandled->forAll(e | e.eventType &lt;> EventType::Custom)&#xA;}.status"/>
+      <details key="ForbiddenActionsForRobot" value="Tuple {&#xA;&#x9;message : String = 'Forbidden actions for this kind of Robot',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.oclIsTypeOf(Robot) or self.oclIsTypeOf(AdvancedRobot) implies&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;self.runActions->forAll(a | a.functionName &lt;> 'setTurnRate' and a.functionName &lt;> 'setGunTurnRotationRate' and a.functionName &lt;> 'setVelocityRate' and a.functionName &lt;> 'setRadarRotationRate') and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.infiniteLoopActions->forAll(a | a.functionName &lt;> 'setTurnRate' and a.functionName &lt;> 'setGunTurnRotationRate' and a.functionName &lt;> 'setVelocityRate' and a.functionName &lt;> 'setRadarRotationRate') and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.eventsHandled.actions->forAll(a | a.functionName &lt;> 'setTurnRate' and a.functionName &lt;> 'setGunTurnRotationRate' and a.functionName &lt;> 'setVelocityRate' and a.functionName &lt;> 'setRadarRotationRate')&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventsHandled" upperBound="-1"
+        eType="#//Event"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runActions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="infiniteLoopActions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="DeathEventActionsCheck"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Implemented death event has to have at least one action"/>
+      </eAnnotations>
+      <details key="DeathEventActionsCheck" value="&#xA;  &#x9;&#x9;&#x9; self.eventType = EventType::Death implies (self.eventType = EventType::Death and self.actions->notEmpty())"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType" eType="#//EventType"
+        defaultValueLiteral="Custom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdvancedRobot" eSuperTypes="#//Robot">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AdvancedRobotBulletHitHandling"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Advanced robot has to have bullet hit event and actions are not supposed to be empty"/>
+      </eAnnotations>
+      <details key="AdvancedRobotBulletHitHandling" value="&#xA;  &#x9;&#x9;&#x9;self.oclIsTypeOf(AdvancedRobot) implies self.eventsHandled->exists(e | e.eventType = EventType::BulletHit and e.actions->forAll(a | a.functionName &lt;> ''))"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RangeControlRobot" eSuperTypes="#//AdvancedRobot">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="RangeControlRobotEventsAmount"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="RangeControl bot suppose to have at least 2 events when created"/>
+      </eAnnotations>
+      <details key="RangeControlRobotEventsAmount" value="&#xA;  &#x9;&#x9;&#x9;self.eventsHandled->collect(e | e.eventType)->asSet()->size() >= 2"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventType">
+    <eLiterals name="BulletHit" value="8"/>
+    <eLiterals name="BulletMissed" value="1"/>
+    <eLiterals name="Death" value="2"/>
+    <eLiterals name="HitByBullet" value="3"/>
+    <eLiterals name="HitRobot" value="4"/>
+    <eLiterals name="HitWall" value="5"/>
+    <eLiterals name="ScannedRobot" value="6"/>
+    <eLiterals name="Win" value="7"/>
+    <eLiterals name="Custom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RobotDesign">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="robot" upperBound="-1"
+        eType="#//Robot" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
